@@ -1,0 +1,14 @@
+C:\Projetos\BatalhaNaval\bin\Debug\net7.0\BatalhaNaval.exe
+C:\Projetos\BatalhaNaval\bin\Debug\net7.0\BatalhaNaval.deps.json
+C:\Projetos\BatalhaNaval\bin\Debug\net7.0\BatalhaNaval.runtimeconfig.json
+C:\Projetos\BatalhaNaval\bin\Debug\net7.0\BatalhaNaval.dll
+C:\Projetos\BatalhaNaval\bin\Debug\net7.0\BatalhaNaval.pdb
+C:\Projetos\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.AssemblyInfoInputs.cache
+C:\Projetos\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.AssemblyInfo.cs
+C:\Projetos\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.csproj.CoreCompileInputs.cache
+C:\Projetos\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.dll
+C:\Projetos\BatalhaNaval\obj\Debug\net7.0\refint\BatalhaNaval.dll
+C:\Projetos\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.pdb
+C:\Projetos\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.genruntimeconfig.cache
+C:\Projetos\BatalhaNaval\obj\Debug\net7.0\ref\BatalhaNaval.dll
