@@ -1,5 +1,9 @@
 public class Menu
 {
+    public Menu()
+    {
+        menu();    
+    }
     public void menu()
     {
         Console.Write("1-Jogar||0-Sair:");
