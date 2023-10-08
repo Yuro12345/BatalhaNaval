@@ -1,4 +1,5 @@
 namespace BatalhaNaval;
+<<<<<<< HEAD
 
 public class sistemas
 {
@@ -63,5 +64,14 @@ public class sistemas
         RevelarMapa(mapa);
         Console.WriteLine($"Pontuação final: {pontos}");
 
+=======
+public class Sistemas
+{
+    void Jogar()
+    {
+
+>>>>>>> origin/master
     }
+
 }
+

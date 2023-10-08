@@ -12,3 +12,18 @@ C:\Projetos\BatalhaNaval\obj\Debug\net7.0\refint\BatalhaNaval.dll
 C:\Projetos\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.pdb
 C:\Projetos\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.genruntimeconfig.cache
 C:\Projetos\BatalhaNaval\obj\Debug\net7.0\ref\BatalhaNaval.dll
+E:\Faculdade\Tio Lu\BatalhaNaval\bin\Debug\net7.0\BatalhaNaval.exe
+E:\Faculdade\Tio Lu\BatalhaNaval\bin\Debug\net7.0\BatalhaNaval.deps.json
+E:\Faculdade\Tio Lu\BatalhaNaval\bin\Debug\net7.0\BatalhaNaval.runtimeconfig.json
+E:\Faculdade\Tio Lu\BatalhaNaval\bin\Debug\net7.0\BatalhaNaval.dll
+E:\Faculdade\Tio Lu\BatalhaNaval\bin\Debug\net7.0\BatalhaNaval.pdb
+E:\Faculdade\Tio Lu\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.csproj.AssemblyReference.cache
+E:\Faculdade\Tio Lu\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.GeneratedMSBuildEditorConfig.editorconfig
+E:\Faculdade\Tio Lu\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.AssemblyInfoInputs.cache
+E:\Faculdade\Tio Lu\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.AssemblyInfo.cs
+E:\Faculdade\Tio Lu\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.csproj.CoreCompileInputs.cache
+E:\Faculdade\Tio Lu\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.dll
+E:\Faculdade\Tio Lu\BatalhaNaval\obj\Debug\net7.0\refint\BatalhaNaval.dll
+E:\Faculdade\Tio Lu\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.pdb
+E:\Faculdade\Tio Lu\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.genruntimeconfig.cache
+E:\Faculdade\Tio Lu\BatalhaNaval\obj\Debug\net7.0\ref\BatalhaNaval.dll
