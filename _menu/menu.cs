@@ -2,7 +2,7 @@ public class Menu
 {
     public Menu()
     {
-        menu();    
+        menu();
     }
     public void menu()
     {
@@ -18,7 +18,7 @@ public class Menu
                 default:
                     break;
             }
-            Console.Write("1-Jogar||0-Sair:");
+            Console.Write("1-Iniciar novo jogo||0-Sair:");
             escolha = (byte.TryParse(Console.ReadLine(), out auxescolha)) ? auxescolha : default;
         }
     }
