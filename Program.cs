@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 using System;
 class Program
 {
-=======
-﻿﻿class Program{
->>>>>>> origin/master
     public Program()
     {
     }
@@ -13,7 +9,4 @@ class Program
         new Menu();
     }
 }
-<<<<<<< HEAD
 // >>>>>>> origin/master
-=======
->>>>>>> origin/master

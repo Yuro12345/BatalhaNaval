@@ -27,3 +27,10 @@ E:\Faculdade\Tio Lu\BatalhaNaval\obj\Debug\net7.0\refint\BatalhaNaval.dll
 E:\Faculdade\Tio Lu\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.pdb
 E:\Faculdade\Tio Lu\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.genruntimeconfig.cache
 E:\Faculdade\Tio Lu\BatalhaNaval\obj\Debug\net7.0\ref\BatalhaNaval.dll
+C:\Users\Cliente\Desktop\David estudos\batalhaNaval\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cliente\Desktop\David estudos\batalhaNaval\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.AssemblyInfoInputs.cache
+C:\Users\Cliente\Desktop\David estudos\batalhaNaval\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.AssemblyInfo.cs
+C:\Users\Cliente\Desktop\David estudos\batalhaNaval\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.csproj.CoreCompileInputs.cache
+C:\Users\Cliente\Desktop\David estudos\batalhaNaval\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.dll
+C:\Users\Cliente\Desktop\David estudos\batalhaNaval\BatalhaNaval\obj\Debug\net7.0\refint\BatalhaNaval.dll
+C:\Users\Cliente\Desktop\David estudos\batalhaNaval\BatalhaNaval\obj\Debug\net7.0\BatalhaNaval.pdb

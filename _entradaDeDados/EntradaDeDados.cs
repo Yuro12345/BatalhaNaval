@@ -1,24 +1,33 @@
-using BatalhaNaval;
-
-internal partial class Program:sistemas
+using System;
+public partial class EntradaDados:Board
 {
-    int[,] mapa = new int[10, 10];
-    int row, column;
-
-    public void InsercaoDados()
+    int jogada, pontos;
+    
+    void Pontuacao()
     {
-        for (int jogadas = 1; jogadas <= 15; i++)
+        if(Board.pAviao)
         {
-            Console.WriteLine($"Jogadas: {jogadas}    Pontuação: {pontuação.pontos}");
+            pontos += 5;
+            Console.ForegroundColor = ConsoleColor.Red;
+        }
+        else if(Board.Reboque)
+        {
+            pontos += 10;
+            Console.ForegroundColor = ConsoleColor.Red;
 
-            for (int i = 1; i <= 15; i++)
+        }
+        else if(Board.Cruzador)
+        {
+            pontos += 15;
+            Console.ForegroundColor = ConsoleColor.Red;
+        }
+
+        if(jogada = Empty)
+        {
+            jogada = Console.ForegroundColor = Console;
+            if(jogada == Empty)
             {
-                Concole.Clear();
-
-                Console.WriteLine("Digite a posição que você deseja jogar:");
-                mapa[row, column] = Console.ReadLine();
-
-                Console.WriteLine(mapa);
+                Console.WriteLine("");
             }
         }
     }

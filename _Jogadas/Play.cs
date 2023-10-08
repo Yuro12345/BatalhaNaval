@@ -1,3 +1,4 @@
+
 class Play
 {
     public Board board;
@@ -5,7 +6,7 @@ class Play
     {
         this.board = board;
     }
-    public void Jogabilidade(int linha, int coluna)
+    public void Jogabilidade()
     {
         for (int tiros = 15; tiros >= 0; tiros--)
         {
@@ -17,6 +18,7 @@ class Play
             coluna = int.TryParse(Console.ReadLine(), out int auxcoluna) ? auxcoluna : coluna = new Random().Next(9);
             board.CompareBoard(linha, coluna, Tabuleiro, TabuleiroVazio);
 
+            EntradaDados.Pontuacao();
         }
     }
 
