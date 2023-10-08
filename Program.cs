@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 using System;
 class Program
+=======
+﻿partial class Program
+>>>>>>> origin/master
 {
     public Program()
     {
@@ -8,5 +12,9 @@ class Program
     {
         new Menu();
     }
+<<<<<<< HEAD
 }
 // >>>>>>> origin/master
+=======
+}
+>>>>>>> origin/master
