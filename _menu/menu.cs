@@ -13,7 +13,7 @@ public class Menu
             switch (escolha)
             {
                 case 1:
-                    new Board();
+                    new Play();
                     break;
                 default:
                     break;

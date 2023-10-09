@@ -1,23 +1,27 @@
 class Play
 {
-    public Board board;
-    public Play(Board board)
+    public Board board = new Board();
+    public Play()
     {
-        this.board = board;
+        String[,] Tabuleiro = board.mapa();
+        String[,] TabuleiroVazio = board.EmptyBoard();
+        Jogabilidade(Tabuleiro, TabuleiroVazio);
     }
-    public void Jogabilidade(int linha, int coluna)
+    public void Jogabilidade(String[,] Tabuleiro, String[,] TabuleiroVazio)
     {
         for (int tiros = 15; tiros >= 0; tiros--)
         {
-            String[,] Tabuleiro = board.mapa();
-            String[,] TabuleiroVazio = board.EmptyBoard();
             Console.WriteLine($"Você tem {tiros} tiros restantes, escolha a linha entre 0 e 9:");
-            linha = int.TryParse(Console.ReadLine(), out int auxlinha) ? auxlinha : linha = new Random().Next(9);
+            int linha = int.TryParse(Console.ReadLine(), out int auxlinha) ? auxlinha : new Random().Next(9);
             Console.WriteLine($"Escolha a coluna entre 0 e 9:");
-            coluna = int.TryParse(Console.ReadLine(), out int auxcoluna) ? auxcoluna : coluna = new Random().Next(9);
-            board.CompareBoard(linha, coluna, Tabuleiro, TabuleiroVazio);
-
+            int coluna = int.TryParse(Console.ReadLine(), out int auxcoluna) ? auxcoluna : new Random().Next(9);
+            char jogada = board.CompareBoard(linha, coluna, Tabuleiro, TabuleiroVazio);
+            board.Jogada(jogada, TabuleiroVazio);
+            board.Popular(linha, coluna);
+            System.Console.WriteLine($"Voce tem {board.pontos} pontos!");
         }
+
+
     }
 
 }

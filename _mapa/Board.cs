@@ -1,11 +1,16 @@
-using System.Text;
+using System.ComponentModel.DataAnnotations.Schema;
 
-class Board
+public class Board
 {
+    public char jogada { get; set; }
+    public int pontos { get; set; }
+    public String[,] TabuleiroPopulado { get; set; }
+    public int[] coordenadas_linha = new int[15];
+    public int[] coordenadas_coluna = new int[15];
+
     public Board()
     {
-        mapa();
-        EmptyBoard();
+
     }
     public String[,] mapa()
     {
@@ -58,6 +63,7 @@ class Board
         //     }
         //     Console.WriteLine();
         // }
+        this.TabuleiroPopulado = Tabuleiro;
         return Tabuleiro;
     }
     public String[,] EmptyBoard()
@@ -80,7 +86,7 @@ class Board
         Console.WriteLine("---------------------------------------|");
         Console.WriteLine(" 0   1   2   3   4   5   6   7   8   9");
     }
-    public String CompareBoard(int linha, int coluna, String[,] Tabuleiro, String[,] TabuleiroVazio)
+    public char CompareBoard(int linha, int coluna, String[,] Tabuleiro, String[,] TabuleiroVazio)
     {
         String jogada = Tabuleiro[linha, coluna];
         if (TabuleiroVazio[linha, coluna] == null)
@@ -91,25 +97,86 @@ class Board
         {
             Console.WriteLine("Posição inválida");
         }
-        return jogada;
+        return char.Parse(jogada);
     }
-    public void Jogada(String jogada, String[,] TabuleiroVazio)
+    public void Jogada(char jogada, String[,] TabuleiroVazio)
     {
+        Console.ResetColor();
         switch (jogada)
         {
-            case "P":
+            case 'P':
+                Pontuacao(jogada);
                 PercorreTabuleiro(TabuleiroVazio);
+                this.jogada = jogada;
                 break;
-            case "R":
+            case 'R':
+                Pontuacao(jogada);
+
                 PercorreTabuleiro(TabuleiroVazio);
+                this.jogada = jogada;
                 break;
-            case "C":
+            case 'C':
+                Pontuacao(jogada);
+
                 PercorreTabuleiro(TabuleiroVazio);
+                this.jogada = jogada;
+
                 break;
-            case "A":
+            case 'A':
                 PercorreTabuleiro(TabuleiroVazio);
+                this.jogada = jogada;
                 break;
         }
+    }
 
+    public void Popular(int linha, int coluna)
+    {
+        for (int i = 0; i < 15; i++)
+        {
+            coordenadas_linha[linha] = linha;
+            coordenadas_coluna[coluna] = coluna;
+        }
+
+        this.TabuleiroPopulado[linha, coluna] = this.jogada.ToString();
+
+
+        for (int i = 0; i < TabuleiroPopulado.GetLength(0); i++)
+        {
+            Console.WriteLine("\n---------------------------------------|");
+            for (int j = 0; j < TabuleiroPopulado.GetLength(1); j++)
+            {
+                if (i == coordenadas_linha[j] && j == coordenadas_coluna[j])
+                {
+                    Console.Write($"   {TabuleiroPopulado[linha,coluna]}|");
+                }
+                else
+                {
+                    Console.Write($"   |");
+                }
+
+            }
+
+        }
+        Console.WriteLine("\n---------------------------------------|");
+        Console.WriteLine(" 0   1   2   3   4   5   6   7   8   9");
+    }
+    public void Pontuacao(char jogada)
+    {
+        if (jogada == 'P')
+        {
+            pontos += 5;
+            Console.ForegroundColor = ConsoleColor.Red;
+        }
+        else if (jogada == 'R')
+        {
+            pontos += 10;
+            Console.ForegroundColor = ConsoleColor.Red;
+
+        }
+        else if (jogada == 'C')
+        {
+            pontos += 15;
+            Console.ForegroundColor = ConsoleColor.Red;
+        }
     }
 }
