@@ -1,11 +1,11 @@
-using System.ComponentModel.DataAnnotations.Schema;
+
 
 public class Board
 {
     public char jogada { get; set; }
     public int pontos { get; set; }
     public String[,] TabuleiroPopulado { get; set; }
-    public String[] jogadasAnteriores { get; set; }
+    public String[,] jogadasAnteriores = new String [10,10];
     public int[] coordenadas_linha = new int[10];
     public int[] coordenadas_coluna = new int[10];
 
@@ -139,115 +139,138 @@ public class Board
     }
     public void proximidade(int linha, int coluna)
     {
-        for (int i = 0; i < 10; i++)
+        if (TabuleiroPopulado[linha, coluna - 1] == "A")
         {
-            for (int j = 0; j < 10; j++)
-            {
-                if (TabuleiroPopulado[linha, coluna - 1] == "A")
-                {
-                    TabuleiroPopulado[linha, coluna - 1] = "1";
-                }
-                if (TabuleiroPopulado[linha, coluna - 2] == "A")
-                {
-                    TabuleiroPopulado[linha, coluna - 2] = "2";
-                }
-                if (TabuleiroPopulado[linha, coluna - 3] == "A")
-                {
-                    TabuleiroPopulado[linha, coluna - 3] = "3";
-                }
-                if (TabuleiroPopulado[linha, coluna + 1] == "A")
-                {
-                    TabuleiroPopulado[linha, coluna + 1] = "1";
-                }
-                if (TabuleiroPopulado[linha, coluna + 2] == "A")
-                {
-                    TabuleiroPopulado[linha, coluna + 2] = "2";
-                }
-                if (TabuleiroPopulado[linha, coluna + 3] == "A")
-                {
-                    TabuleiroPopulado[linha, coluna + 3] = "3";
-                }
-                if (TabuleiroPopulado[linha - 1, coluna] == "A")
-                {
-                    TabuleiroPopulado[linha - 1, coluna] = "1";
-                }
-                if (TabuleiroPopulado[linha - 2, coluna] == "A")
-                {
-                    TabuleiroPopulado[linha - 2, coluna] = "2";
-                }
-                if (TabuleiroPopulado[linha - 3, coluna] == "A")
-                {
-                    TabuleiroPopulado[linha - 3, coluna] = "3";
-                }
-                if (TabuleiroPopulado[linha + 1, coluna] == "A")
-                {
-                    TabuleiroPopulado[linha + 1, coluna] = "1";
-                }
-                if (TabuleiroPopulado[linha + 2, coluna] == "A")
-                {
-                    TabuleiroPopulado[linha + 2, coluna] = "2";
-                }
-                if (TabuleiroPopulado[linha + 3, coluna] == "A")
-                {
-                    TabuleiroPopulado[linha + 3, coluna] = "3";
-                }
-            }
+            TabuleiroPopulado[linha, coluna - 1] = "1";
         }
-
-
-        public void Popular(int linha, int coluna)
+        if (TabuleiroPopulado[linha, coluna - 2] == "A")
         {
-            coordenadas_linha[linha] = linha;
-            coordenadas_coluna[coluna] = coluna;
-            Historico();
-            this.TabuleiroPopulado[linha, coluna] = this.jogadasAnteriores.ToString();
-
-
-            for (int i = 0; i < TabuleiroPopulado.GetLength(0); i++)
-            {
-                Console.WriteLine("---------------------------------------|");
-                for (int j = 0; j < TabuleiroPopulado.GetLength(1); j++)
-                {
-                    if (i == coordenadas_linha[linha] && j == coordenadas_coluna[coluna])
-                    {
-                        Console.Write($" {TabuleiroPopulado[linha, coluna]} |");
-                    }
-                    else
-                    {
-                        Console.Write($"   |");
-                    }
-                }
-                Console.WriteLine(i);
-            }
-            Console.WriteLine("---------------------------------------|");
-            Console.WriteLine(" 0   1   2   3   4   5   6   7   8   9");
+            TabuleiroPopulado[linha, coluna - 1] = "2";
         }
-        public void Historico()
+        try
         {
-            for (int i = 0; i <= 15; i++)
+            
             {
-                this.jogadasAnteriores[i] = this.jogada.ToString();
+                TabuleiroPopulado[linha, coluna - 3] = "3";
             }
+
         }
-
-
-        public void Pontuacao(char jogada)
+        catch
         {
-            if (jogada == 'P')
-            {
-                pontos += 5;
-                Console.ForegroundColor = ConsoleColor.Red;
-            }
-            else if (jogada == 'R')
-            {
-                pontos += 10;
-                Console.ForegroundColor = ConsoleColor.Red;
 
-            }
-            else if (jogada == 'C')
-            {
-                pontos += 15;
-                Console.ForegroundColor = ConsoleColor.Red;
-            }
+        }
+        if (TabuleiroPopulado[linha, coluna + 1] == "A")
+        {
+            TabuleiroPopulado[linha, coluna + 1] = "1";
+        }
+        if (TabuleiroPopulado[linha, coluna + 2] == "A")
+        {
+            TabuleiroPopulado[linha, coluna + 1] = "2";
+        }
+        if (TabuleiroPopulado[linha, coluna + 3] == "A")
+        {
+            TabuleiroPopulado[linha, coluna + 1] = "3";
+        }
+        if (TabuleiroPopulado[linha - 1, coluna] == "A")
+        {
+            TabuleiroPopulado[linha - 1, coluna] = "1";
+        }
+        if (TabuleiroPopulado[linha - 2, coluna] == "A")
+        {
+            TabuleiroPopulado[linha - 1, coluna] = "2";
+        }
+        if (TabuleiroPopulado[linha - 3, coluna] == "A")
+        {
+            TabuleiroPopulado[linha - 1, coluna] = "3";
+        }
+        if (TabuleiroPopulado[linha + 1, coluna] == "A")
+        {
+            TabuleiroPopulado[linha + 1, coluna] = "1";
+        }
+        if (TabuleiroPopulado[linha + 2, coluna] == "A")
+        {
+            TabuleiroPopulado[linha + 1, coluna] = "2";
+        }
+        if (TabuleiroPopulado[linha + 3, coluna] == "A")
+        {
+            TabuleiroPopulado[linha + 1, coluna] = "3";
         }
     }
+
+    public void Popular(int linha, int coluna)
+    {
+        coordenadas_linha[linha] = linha;
+        coordenadas_coluna[coluna] = coluna;
+        this.TabuleiroPopulado[linha, coluna] = this.jogada.ToString();
+        proximidade(linha, coluna);
+
+        for (int i = 0; i < TabuleiroPopulado.GetLength(0); i++)
+        {
+            Console.WriteLine("---------------------------------------|");
+            for (int j = 0; j < TabuleiroPopulado.GetLength(1); j++)
+            {   
+                if (i == coordenadas_linha[linha] && j == coordenadas_coluna[coluna])
+                {
+                    Console.Write($" {TabuleiroPopulado[linha, coluna]} |");
+                }
+                else
+                {
+                    Console.Write($"   |");
+                }
+            }
+            Console.WriteLine(i);
+        }
+        Console.WriteLine("---------------------------------------|");
+        Console.WriteLine(" 0   1   2   3   4   5   6   7   8   9");
+    }
+
+    public void Pontuacao(char jogada)
+    {
+        if (jogada == 'P')
+        {
+            pontos += 5;
+            Console.ForegroundColor = ConsoleColor.Red;
+        }
+        else if (jogada == 'R')
+        {
+            pontos += 10;
+            Console.ForegroundColor = ConsoleColor.Red;
+
+        }
+        else if (jogada == 'C')
+        {
+            pontos += 15;
+            Console.ForegroundColor = ConsoleColor.Red;
+        }
+    }
+     public void Final(int linha, int coluna)
+{
+    coordenadas_linha[linha] = linha;
+    coordenadas_coluna[coluna] = coluna;
+    this.TabuleiroPopulado[linha, coluna] = this.jogada.ToString();
+    proximidade(linha, coluna);
+
+    for (int i = 0; i < TabuleiroPopulado.GetLength(0); i++)
+    {
+        Console.WriteLine("---------------------------------------|");
+        for (int j = 0; j < TabuleiroPopulado.GetLength(1); j++)
+        {
+            string valorAtual = TabuleiroPopulado[i, j];
+            if (!string.IsNullOrEmpty(valorAtual))
+            {
+                Console.Write($" {valorAtual} |");
+            }
+            else
+            {
+                Console.Write($"   |");
+            }
+        }
+        Console.WriteLine(i);
+    }
+    Console.WriteLine("---------------------------------------|");
+    Console.WriteLine(" 0   1   2   3   4   5   6   7   8   9");
+    Console.WriteLine($"Pontuação final:{pontos}");
+}
+}
+
+
