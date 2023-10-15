@@ -16,7 +16,7 @@ class Play
             Console.WriteLine($"Escolha a coluna entre 0 e 9:");
             int coluna = int.TryParse(Console.ReadLine(), out int auxcoluna) ? auxcoluna : new Random().Next(9);
             char jogada = board.CompareBoard(linha, coluna, Tabuleiro, TabuleiroVazio);
-            board.Jogada(jogada, TabuleiroVazio);
+            board.Jogada(jogada);
             board.Popular(linha, coluna);
             System.Console.WriteLine($"Voce tem {board.pontos} pontos!");
         }

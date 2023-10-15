@@ -5,8 +5,9 @@ public class Board
     public char jogada { get; set; }
     public int pontos { get; set; }
     public String[,] TabuleiroPopulado { get; set; }
-    public int[] coordenadas_linha = new int[15];
-    public int[] coordenadas_coluna = new int[15];
+    public String[] jogadasAnteriores { get; set; }
+    public int[] coordenadas_linha = new int[10];
+    public int[] coordenadas_coluna = new int[10];
 
     public Board()
     {
@@ -74,6 +75,14 @@ public class Board
     }
     public void PercorreTabuleiro(String[,] TabuleiroVazio)
     {
+        // for (int i = 0; i < 10; i++)
+        // {
+        //     coordenadas_linha[linha] = linha;
+        //     coordenadas_coluna[coluna] = coluna;
+        // }
+
+        // this.TabuleiroPopulado[linha, coluna] = this.jogada.ToString();
+
         for (int linha = 0; linha < TabuleiroVazio.GetLength(0); linha++)
         {
             Console.WriteLine("---------------------------------------|");
@@ -99,67 +108,112 @@ public class Board
         }
         return char.Parse(jogada);
     }
-    public void Jogada(char jogada, String[,] TabuleiroVazio)
+    public void Jogada(char jogada)
     {
         Console.ResetColor();
         switch (jogada)
         {
             case 'P':
                 Pontuacao(jogada);
-                PercorreTabuleiro(TabuleiroVazio);
+                // PercorreTabuleiro(TabuleiroPopulado);
                 this.jogada = jogada;
                 break;
             case 'R':
                 Pontuacao(jogada);
 
-                PercorreTabuleiro(TabuleiroVazio);
+                // PercorreTabuleiro(TabuleiroPopulado);
                 this.jogada = jogada;
                 break;
             case 'C':
                 Pontuacao(jogada);
 
-                PercorreTabuleiro(TabuleiroVazio);
+                // PercorreTabuleiro(TabuleiroPopulado);
                 this.jogada = jogada;
 
                 break;
             case 'A':
-                PercorreTabuleiro(TabuleiroVazio);
+                // PercorreTabuleiro(TabuleiroPopulado);
                 this.jogada = jogada;
                 break;
         }
     }
+    public void proximidade(int linha, int coluna){
+        for(int i=0; i < 10; i++){
+        for(int j=0; j < 10; j++){
+            if(TabuleiroPopulado[linha, coluna - 1] == "A"){
+                TabuleiroPopulado[linha, coluna -1] = "1";
+            }
+            if(TabuleiroPopulado[linha, coluna - 2] == "A"){
+                TabuleiroPopulado[linha, coluna -2] = "2";
+            }
+            if(TabuleiroPopulado[linha, coluna - 3] == "A"){
+                TabuleiroPopulado[linha, coluna -3] = "3";
+            }
+            if(TabuleiroPopulado[linha, coluna + 1] == "A"){
+                TabuleiroPopulado[linha, coluna +1] = "1";
+            }
+            if(TabuleiroPopulado[linha, coluna + 2] == "A"){
+                TabuleiroPopulado[linha, coluna +2] = "2";
+            }
+            if(TabuleiroPopulado[linha, coluna + 3] == "A"){
+                TabuleiroPopulado[linha, coluna +3] = "3";
+            }
+            if(TabuleiroPopulado[linha - 1, coluna] == "A"){
+                TabuleiroPopulado[linha -1, coluna] = "1";
+            }
+            if(TabuleiroPopulado[linha - 2, coluna] == "A"){
+                TabuleiroPopulado[linha -2, coluna] = "2";
+            }
+            if(TabuleiroPopulado[linha - 3, coluna] == "A"){
+                TabuleiroPopulado[linha -3, coluna] =  "3";
+            }
+            if(TabuleiroPopulado[linha + 1, coluna] == "A"){
+                TabuleiroPopulado[linha +1, coluna] = "1";
+            }
+            if(TabuleiroPopulado[linha + 2, coluna] == "A"){
+                TabuleiroPopulado[linha +2, coluna] = "2";
+            }
+            if(TabuleiroPopulado[linha + 3, coluna] == "A"){
+                TabuleiroPopulado[linha +3, coluna] = "3";
+            }
+        }
+    }
+
 
     public void Popular(int linha, int coluna)
     {
-        for (int i = 0; i < 15; i++)
-        {
             coordenadas_linha[linha] = linha;
             coordenadas_coluna[coluna] = coluna;
-        }
-
-        this.TabuleiroPopulado[linha, coluna] = this.jogada.ToString();
+            Historico();
+        this.TabuleiroPopulado[linha, coluna] = this.jogadasAnteriores.ToString();
 
 
         for (int i = 0; i < TabuleiroPopulado.GetLength(0); i++)
         {
-            Console.WriteLine("\n---------------------------------------|");
+            Console.WriteLine("---------------------------------------|");
             for (int j = 0; j < TabuleiroPopulado.GetLength(1); j++)
             {
-                if (i == coordenadas_linha[j] && j == coordenadas_coluna[j])
+                if (i == coordenadas_linha[linha] && j == coordenadas_coluna[coluna])
                 {
-                    Console.Write($"   {TabuleiroPopulado[linha,coluna]}|");
+                    Console.Write($" {TabuleiroPopulado[linha,coluna]} |");
                 }
                 else
                 {
                     Console.Write($"   |");
                 }
-
             }
-
+        Console.WriteLine(i);
         }
-        Console.WriteLine("\n---------------------------------------|");
+        Console.WriteLine("---------------------------------------|");
         Console.WriteLine(" 0   1   2   3   4   5   6   7   8   9");
     }
+    public void Historico(){
+        for(int i =0;i <=15;i++){
+        this.jogadasAnteriores[i] = this.jogada.ToString();
+        }
+    }
+
+
     public void Pontuacao(char jogada)
     {
         if (jogada == 'P')
