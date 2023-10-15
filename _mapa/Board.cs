@@ -137,100 +137,117 @@ public class Board
                 break;
         }
     }
-    public void proximidade(int linha, int coluna){
-        for(int i=0; i < 10; i++){
-        for(int j=0; j < 10; j++){
-            if(TabuleiroPopulado[linha, coluna - 1] == "A"){
-                TabuleiroPopulado[linha, coluna -1] = "1";
-            }
-            if(TabuleiroPopulado[linha, coluna - 2] == "A"){
-                TabuleiroPopulado[linha, coluna -2] = "2";
-            }
-            if(TabuleiroPopulado[linha, coluna - 3] == "A"){
-                TabuleiroPopulado[linha, coluna -3] = "3";
-            }
-            if(TabuleiroPopulado[linha, coluna + 1] == "A"){
-                TabuleiroPopulado[linha, coluna +1] = "1";
-            }
-            if(TabuleiroPopulado[linha, coluna + 2] == "A"){
-                TabuleiroPopulado[linha, coluna +2] = "2";
-            }
-            if(TabuleiroPopulado[linha, coluna + 3] == "A"){
-                TabuleiroPopulado[linha, coluna +3] = "3";
-            }
-            if(TabuleiroPopulado[linha - 1, coluna] == "A"){
-                TabuleiroPopulado[linha -1, coluna] = "1";
-            }
-            if(TabuleiroPopulado[linha - 2, coluna] == "A"){
-                TabuleiroPopulado[linha -2, coluna] = "2";
-            }
-            if(TabuleiroPopulado[linha - 3, coluna] == "A"){
-                TabuleiroPopulado[linha -3, coluna] =  "3";
-            }
-            if(TabuleiroPopulado[linha + 1, coluna] == "A"){
-                TabuleiroPopulado[linha +1, coluna] = "1";
-            }
-            if(TabuleiroPopulado[linha + 2, coluna] == "A"){
-                TabuleiroPopulado[linha +2, coluna] = "2";
-            }
-            if(TabuleiroPopulado[linha + 3, coluna] == "A"){
-                TabuleiroPopulado[linha +3, coluna] = "3";
+    public void proximidade(int linha, int coluna)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            for (int j = 0; j < 10; j++)
+            {
+                if (TabuleiroPopulado[linha, coluna - 1] == "A")
+                {
+                    TabuleiroPopulado[linha, coluna - 1] = "1";
+                }
+                if (TabuleiroPopulado[linha, coluna - 2] == "A")
+                {
+                    TabuleiroPopulado[linha, coluna - 2] = "2";
+                }
+                if (TabuleiroPopulado[linha, coluna - 3] == "A")
+                {
+                    TabuleiroPopulado[linha, coluna - 3] = "3";
+                }
+                if (TabuleiroPopulado[linha, coluna + 1] == "A")
+                {
+                    TabuleiroPopulado[linha, coluna + 1] = "1";
+                }
+                if (TabuleiroPopulado[linha, coluna + 2] == "A")
+                {
+                    TabuleiroPopulado[linha, coluna + 2] = "2";
+                }
+                if (TabuleiroPopulado[linha, coluna + 3] == "A")
+                {
+                    TabuleiroPopulado[linha, coluna + 3] = "3";
+                }
+                if (TabuleiroPopulado[linha - 1, coluna] == "A")
+                {
+                    TabuleiroPopulado[linha - 1, coluna] = "1";
+                }
+                if (TabuleiroPopulado[linha - 2, coluna] == "A")
+                {
+                    TabuleiroPopulado[linha - 2, coluna] = "2";
+                }
+                if (TabuleiroPopulado[linha - 3, coluna] == "A")
+                {
+                    TabuleiroPopulado[linha - 3, coluna] = "3";
+                }
+                if (TabuleiroPopulado[linha + 1, coluna] == "A")
+                {
+                    TabuleiroPopulado[linha + 1, coluna] = "1";
+                }
+                if (TabuleiroPopulado[linha + 2, coluna] == "A")
+                {
+                    TabuleiroPopulado[linha + 2, coluna] = "2";
+                }
+                if (TabuleiroPopulado[linha + 3, coluna] == "A")
+                {
+                    TabuleiroPopulado[linha + 3, coluna] = "3";
+                }
             }
         }
-    }
 
 
-    public void Popular(int linha, int coluna)
-    {
+        public void Popular(int linha, int coluna)
+        {
             coordenadas_linha[linha] = linha;
             coordenadas_coluna[coluna] = coluna;
             Historico();
-        this.TabuleiroPopulado[linha, coluna] = this.jogadasAnteriores.ToString();
+            this.TabuleiroPopulado[linha, coluna] = this.jogadasAnteriores.ToString();
 
 
-        for (int i = 0; i < TabuleiroPopulado.GetLength(0); i++)
-        {
-            Console.WriteLine("---------------------------------------|");
-            for (int j = 0; j < TabuleiroPopulado.GetLength(1); j++)
+            for (int i = 0; i < TabuleiroPopulado.GetLength(0); i++)
             {
-                if (i == coordenadas_linha[linha] && j == coordenadas_coluna[coluna])
+                Console.WriteLine("---------------------------------------|");
+                for (int j = 0; j < TabuleiroPopulado.GetLength(1); j++)
                 {
-                    Console.Write($" {TabuleiroPopulado[linha,coluna]} |");
+                    if (i == coordenadas_linha[linha] && j == coordenadas_coluna[coluna])
+                    {
+                        Console.Write($" {TabuleiroPopulado[linha, coluna]} |");
+                    }
+                    else
+                    {
+                        Console.Write($"   |");
+                    }
                 }
-                else
-                {
-                    Console.Write($"   |");
-                }
+                Console.WriteLine(i);
             }
-        Console.WriteLine(i);
+            Console.WriteLine("---------------------------------------|");
+            Console.WriteLine(" 0   1   2   3   4   5   6   7   8   9");
         }
-        Console.WriteLine("---------------------------------------|");
-        Console.WriteLine(" 0   1   2   3   4   5   6   7   8   9");
-    }
-    public void Historico(){
-        for(int i =0;i <=15;i++){
-        this.jogadasAnteriores[i] = this.jogada.ToString();
+        public void Historico()
+        {
+            for (int i = 0; i <= 15; i++)
+            {
+                this.jogadasAnteriores[i] = this.jogada.ToString();
+            }
         }
-    }
 
 
-    public void Pontuacao(char jogada)
-    {
-        if (jogada == 'P')
+        public void Pontuacao(char jogada)
         {
-            pontos += 5;
-            Console.ForegroundColor = ConsoleColor.Red;
-        }
-        else if (jogada == 'R')
-        {
-            pontos += 10;
-            Console.ForegroundColor = ConsoleColor.Red;
+            if (jogada == 'P')
+            {
+                pontos += 5;
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            else if (jogada == 'R')
+            {
+                pontos += 10;
+                Console.ForegroundColor = ConsoleColor.Red;
 
-        }
-        else if (jogada == 'C')
-        {
-            pontos += 15;
-            Console.ForegroundColor = ConsoleColor.Red;
+            }
+            else if (jogada == 'C')
+            {
+                pontos += 15;
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
         }
     }
-}
