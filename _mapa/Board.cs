@@ -139,9 +139,11 @@ public class Board
     }
     public void proximidade(int linha, int coluna)
     {
-        if (TabuleiroPopulado[linha, coluna - 1] == "A")
-        {
-            TabuleiroPopulado[linha, coluna - 1] = "1";
+        try{
+            if (TabuleiroPopulado[linha, coluna - 1] == "A")
+            {
+                TabuleiroPopulado[linha, coluna - 1] = "1";
+            }
         }
         if (TabuleiroPopulado[linha, coluna - 2] == "A")
         {
